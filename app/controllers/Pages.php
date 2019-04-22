@@ -1,7 +1,10 @@
 <?php
   class Pages extends Controller {
+
+    private $db;
+
     public function __construct(){
-     
+      $this->db = new Database;
     }
     
     public function index(){
@@ -16,9 +19,18 @@
     public function about(){
       $data = [
         'title' => 'About Us',
-        'description' => 'A plateform to buy used or new cars.'
+        'description' => 'A platform to buy new or used cars.'
       ];
 
       $this->view('pages/about', $data);
+    }
+
+    public function inventory(){
+      $data = [
+        'title' => 'Inventory',
+        'description' => 'A page to display car inventory.'
+      ]; 
+
+      $this->view('pages/inventory', $data);
     }
   }
