@@ -31,8 +31,19 @@
       <td><?php echo $car->name ?></td>
       <td><?php echo $car->brand ?></td>
       <td><?php echo $car->price ?></td>
-      <td><a href="<?php echo URLROOT; ?>/cardetails/edit/<?php echo $car->id; ?>"><?php echo $car->selleremail ?></a></td>
+      <td>
+
+        <form action="<?php echo URLROOT; ?>/pages/contact/" method="POST">
+          <input type="hidden" name="<?php echo $car->selleremail ?>">
+          <p class="link" onclick="document.forms[0].submit();return false;">
+            <?php echo $car->selleremail ?>
+          </p>
+        </form>
+
+      </td>
       <?php if(isset($_SESSION['user_email'])) : ?>
+
+
       <td>
         <a href="<?php echo URLROOT; ?>/admins/edit/<?php echo $car->id; ?>" class="btn btn-primary">
             <i class="fa fa-pencil"></i> Edit

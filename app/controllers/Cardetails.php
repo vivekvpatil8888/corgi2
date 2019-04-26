@@ -2,6 +2,15 @@
   class Cardetails extends Controller {
     public function __construct(){
       $this->adminModel = $this->model('Admin');
+    } 
+
+    public function index(){
+      $data = [
+        'title' => 'CarSeller',
+        'description' => 'Simple plateform to buy used or new cars.'
+      ];
+     
+      $this->view('pages/contact', $data);
     }
 
     public function edit($id){
