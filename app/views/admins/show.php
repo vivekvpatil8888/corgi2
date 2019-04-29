@@ -31,7 +31,7 @@
       <td><?php echo $car->name ?></td>
       <td><?php echo $car->brand ?></td>
       <td><?php echo $car->price ?></td>
-      <td><a href="<?php echo URLROOT; ?>/cardetails/edit/<?php echo $car->id; ?>"><?php echo $car->selleremail ?></a></td>
+      <td><a href="mailto: <?php echo $car->selleremail ?>"><?php echo $car->selleremail ?></a></td>
       <?php if(isset($_SESSION['user_email'])) : ?>
       <td>
         <a href="<?php echo URLROOT; ?>/admins/edit/<?php echo $car->id; ?>" class="btn btn-primary">
